@@ -1,5 +1,5 @@
 from __future__ import division
-from gg_36_ref import run
+from gg_ref import run
 
 def test(tactic, times):
     i = 0
