@@ -23,7 +23,7 @@ def one_round(tactic):
     t = rand_dice(2) # t for total
     #print "First strike: %d" % t
     i = 1
-    while i < tactic: # loop as long as you want to
+    while t < tactic: # loop as long as you want to
         
         n = one_strike() # save return value of one_strike() to n
         if n == 1: # lose if n == 1
@@ -33,7 +33,6 @@ def one_round(tactic):
         elif n > 1:
             t += n
             #print "New total:", t
-            i += 1
 
     # print "Adding %d to total sum." % t
     return t
@@ -53,7 +52,7 @@ def save_list(t, points): # called to save the result to list
 
 #t = one_round()
 #save_list(t, points)
-def run(tactic):
+def run_count(tactic):
     i = 0
     rounds = 10 # rounds set to default
     points = []
