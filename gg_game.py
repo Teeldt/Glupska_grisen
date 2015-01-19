@@ -3,20 +3,7 @@ from random import randint
 points = []
 
 def rand_dice(n): # generates a random number, remember to put n = 1 when calling
-    if n == 1:
-        return randint(1, 6)
-    else:
-        return randint(n, 6) # to be able to exclude 1 as a possibility
-
-def one_strike(): # randomizes one number and checks for 1. If not 1, returns sum
-    n = rand_dice(1)
-    if 1 == n: # decides if it's a 1
-        return 1
-    elif n > 1:
-        #print "You got %d" % n
-        return n
-    else:
-        print "Something's wrong"
+    return randint(n, 6)  # to be able to exclude 1 as a possibility
 
 
 def one_round():
@@ -25,7 +12,7 @@ def one_round():
     ans = raw_input("Press ENTER to strike again (anything else to save)>")
     while ans == "": # loop as long as you want to
         
-        n = one_strike() # save return value of one_strike() to n
+        n = rand_dice(1) # save return value of one_strike() to n
         if n == 1: # lose if n == 1
             t = 0
             print "You lost. Saving", t
@@ -35,7 +22,6 @@ def one_round():
             print "New total:", t
             ans = raw_input("Press ENTER to strike again (anything else to save)>\n")
 
-    # print "Adding %d to total sum." % t
     return t
         
 
@@ -50,8 +36,7 @@ def save_list(t, points): # called to save the result to list
     print "Points now: ", points
     print "Overall total: %d\n" % s
 
-#t = one_round()
-#save_list(t, points)
+
 i = 0
 rounds = int(raw_input("How many rounds? ")) # ask for how many turns to run
 while i < rounds: # runs until specified amount of time

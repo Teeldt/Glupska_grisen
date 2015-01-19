@@ -4,19 +4,8 @@ from random import randint
 points = []
 
 def rand_dice(n): # generates a random number, remember to put n = 1 when calling
-    if n == 1:
-        return randint(1, 6) # six-sided dice
-    else:
-        return randint(n, 6) # to be able to exclude 1 as a possibility
-
-def one_strike(): # randomizes one number and checks for 1. If not 1, returns sum
-    n = rand_dice(1)
-    if 1 == n: # decides if it's a 1
-        return 1
-    elif n > 1:
-        return n
-    else:
-        print "Something's wrong"
+    return randint(n, 6) # six-sided dice
+    # to be able to exclude 1 as a possibility
 
 
 def one_round(tactic):
@@ -24,7 +13,7 @@ def one_round(tactic):
     i = 1
     while i < tactic: # loop as long as you want to
         
-        n = one_strike() # save return value of one_strike() to n
+        n = rand_dice(1) # save return value of one_strike() to n
         if n == 1: # lose if n == 1
             t = 0
             return 0 # quits the function and returns value 0
