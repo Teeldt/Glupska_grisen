@@ -1,7 +1,6 @@
 # Glupska grisen
 # Teo Elmfeldt
 from random import randint
-points = []
 
 def rand_dice(n): # generates a random number, remember to put n = 1 when calling
     return randint(n, 6) # six-sided dice
@@ -65,8 +64,8 @@ def run_count(tactic):
     rounds = 10 # rounds set to default
     points = []
     while i < rounds: # runs until specified amount of time
-        t = one_round_count(tactic)
-        save_list(t, points)
+        total = one_round_count(tactic)
+        save_list(total, points)
         i += 1
     
     s = 0
