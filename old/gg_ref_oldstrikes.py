@@ -8,10 +8,10 @@ def rand_dice(n): # generates a random number, remember to put n = 1 when callin
     # to be able to exclude 1 as a possibility
 
 
-def one_round(tactic):
+def one_round_count(tactic):
     t = rand_dice(2) # t for total
     i = 1
-    while i < tactic: # loop as long as you want to
+    while t < tactic: # loop while the total < tactic
         
         n = rand_dice(1) # save return value of one_strike() to n
         if n == 1: # lose if n == 1
@@ -19,7 +19,6 @@ def one_round(tactic):
             return 0 # quits the function and returns value 0
         elif n > 1:
             t += n
-            i += 1
     return t
         
 
@@ -33,7 +32,7 @@ def save_list(t, points): # called to save the result to list
     #print "Overall total: %d\n" % s
 
 
-def run_strikes(tactic):
+def run_count(tactic):
     i = 0
     rounds = 10 # rounds set to default
     points = []
